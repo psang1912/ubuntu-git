@@ -1,0 +1,77 @@
+***Cây thư mục
+Trước khi tạo cây
+sudo apt install tree
+
+Tạo cây thư mục bao gồm cả file .sh
+mkdir -p COMPANY/Manager COMPANY/Accountant COMPANY/Sales COMPANY/Employee
+touch COMPANY/Accountant/acc.sh
+touch COMPANY/Sales/marketing.sh
+touch COMPANY/Employee/data1.sh COMPANY/Employee/data2.sh
+
+Xem cây
+tree
+
+# Xoá thư mục: sudo rm -r <tên thư mục>
+# Cấp quyền cho thư mục: sudo chmod 7… <tên thư mục>
+
+****Tạo user và add vào Group
+# Tạo các nhóm
+sudo groupadd Accountant
+sudo groupadd Sales
+sudo groupadd Employee
+
+# Tạo user ko có password
+sudo useradd <tenuser>
+
+# Tạo người dùng 
+sudo useradd <Ten_User>	
+
+# Tạo password 
+sudo passwd <Ten_User>      //sau đó nhập pass vào
+
+#Thêm user vào Group đã có
+sudo usermod -G <Ten_Group> <Ten_User>	
+
+# Xóa user & xóa group
+sudo userdel <Ten_User>
+sudo groupdel <Ten_Group>
+
+# Xóa user ra khỏi Group
+sudo deluser <tenuser> <tengroup>
+
+# Xem group 
+cat/etc/<tengroup> hoặc getent group
+
+# Xem tất cả user 
+cat/etc/passwd hoặc getent passwd
+
+# Trỏ đến vị trí nào thì đến nó
+cd Desktop
+cd /home/pc/COMPANY
+
+# out ra
+cd ..
+
+# Phân quyền thư mục
+r (read) = 4, w (write) = 2, x (excute) = 1, - = 0
+
+       + Câu lệnh phân quyền:
+       	sudo chmod <thông số> <Tên thư mục or file>
+	Ví dụ: $ sudo chmod 764 Accountant
+
+# Đổi quyền thư mục: u (Owner) - g (Group) - o (Other)
+Ví dụ 766 rwx thành 666 thì: 
+sudo chmod u=rw <ten_file>
+
+# Xem tất cả quyền của thư mục or file
+ls -l
+
+#Tạo file .txt
+sudo nano ex01.txt hoặc nano ex01.txt
+sudo cat/etc
+
+01 DHCP, Samba, Raid
+02 DNS, Web, NFS
+03 FTP, Print , SQL
+04 DHCP, Web, SQL
+05 DNS, Web, NFS

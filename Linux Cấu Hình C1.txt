@@ -1,0 +1,67 @@
+ip a : xem địa chỉ Lockback (lo) và địa chỉ mạng LAN (enp0s3) (IP4) 
+ip route : xem địa chỉ Default gateway
+cat /etc/resolv.conf : Xem địa chỉ dns
+
+Đầu tiên vào 
+sudo apt-get update
+
+Cài đặt phông chũ 
+sudo apt-get install ttf-mscorefonts-installer
+
+Cài đặt phông chữ tiếng Việt
+sudo apt-get install ttf-dejavu ttf-wqy-zenhei ttf-vlgothic ttf-arphic-uming
+
+Cài đặt phông chữ cụ thể: arial , time new roman , tahoma
+sudo apt-get install fonts-arial fonts-times-new-roman fonts-tahoma
+
+***Cây thư mục
+Trước khi tạo cây
+sudo apt install tree
+
+Tạo cây thư mục bao gồm cả file .sh
+mkdir -p COMPANY/Manager COMPANY/Accountant COMPANY/Sales COMPANY/Employee
+touch COMPANY/Accountant/acc.sh
+touch COMPANY/Sales/marketing.sh
+touch COMPANY/Employee/data1.sh COMPANY/Employee/data2.sh
+
+Xem cây
+tree
+
+***Libreoffice
+Trước tiên phải install nó
+sudo apt-get install apt libreoffice
+
+Tạo một tài liệu mới trong Impress với 2 slide trống và lưu vào thư mục Sales 
+với tên Document.odp. trên ubuntu
+
+Tạo user và add vào Group
+# Tạo các nhóm
+sudo addgroup Accountant
+sudo addgroup Sales
+sudo addgroup Employee
+
+# Tạo người dùng và thêm vào nhóm
+sudo adduser kt1
+sudo usermod -aG Accountant kt1
+echo '123' | sudo passwd --stdin kt1
+
+sudo adduser kt2
+sudo usermod -aG Accountant kt2
+echo '123' | sudo passwd --stdin kt2
+
+sudo adduser kd1
+sudo usermod -aG Sales kd1
+echo '123' | sudo passwd --stdin kd1
+
+sudo adduser kd2
+sudo usermod -aG Sales kd2
+echo '123' | sudo passwd --stdin kd2
+
+sudo adduser nv1
+sudo usermod -aG Employee nv1
+echo '123' | sudo passwd --stdin nv1
+
+sudo adduser nv2
+sudo usermod -aG Employee nv2
+echo '123' | sudo passwd --stdin nv2
+
